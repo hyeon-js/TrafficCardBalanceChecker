@@ -13,7 +13,8 @@ class MainActivity : Activity() {
         layout.orientation = 1
 
         val txt = TextView(this)
-        txt.text = "Tag IC Card to Smartphone"
+        txt.text = "1. Enable NFC on your Smartphone\n" +
+                "2. Tag IC Card to Smartphone"
         txt.layoutParams = LinearLayout.LayoutParams(-1, -1)
         txt.gravity = Gravity.CENTER or Gravity.CENTER_VERTICAL
         layout.addView(txt)
