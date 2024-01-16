@@ -12,7 +12,7 @@ class ICCard {
     var balance: Int = 0
 
     @Throws(Exception::class)
-    fun ICCard(id: IsoDep) {
+    constructor(id: IsoDep) {
         id.connect()
         // CLA | INS | P1 | P2 | Lc | Data           | Le
         // 00  | A4  | 04 | 00 | 07 | A0000004520001 | 00
