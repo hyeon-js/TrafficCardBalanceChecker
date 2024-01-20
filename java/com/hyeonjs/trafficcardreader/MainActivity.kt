@@ -17,6 +17,7 @@ class MainActivity : Activity() {
 
     private var adapter: NfcAdapter? = null
     private var intent: PendingIntent? = null
+    private var txt: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ class MainActivity : Activity() {
         adapter = NfcAdapter.getDefaultAdapter(this);
         val intent = Intent(this, javaClass).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP)
         this.intent = PendingIntent.getActivity(this, 0, intent, 0)
+        this.txt = txt;
     }
 
     override fun onNewIntent(intent: Intent) {
@@ -43,11 +45,13 @@ class MainActivity : Activity() {
             val tag: Tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG) ?: return
             val id = IsoDep.get(tag) ?: return
             val card = ICCard(id)
-            toast("${card.balance}원")
+            txt!!.text = "${card.balance}원"
+            txt!!.textSize = 18f
         } catch (e: Exception) {
             toast(e.toString())
         }
     }
+
 
 
     override fun onResume() {
