@@ -6,11 +6,13 @@ import android.content.Intent
 import android.nfc.NfcAdapter
 import android.nfc.Tag
 import android.nfc.tech.IsoDep
+import android.nfc.tech.NfcF
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import com.darktornado.library.FeliCa
 
 
 class MainActivity : Activity() {
@@ -44,10 +46,22 @@ class MainActivity : Activity() {
         super.onNewIntent(intent)
         try {
             val tag: Tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG) ?: return
-            val id = IsoDep.get(tag) ?: return
-            val card = ICCard(id)
-            txt!!.text = "${card.balance}원"
-            txt!!.textSize = 18f
+            val id = IsoDep.get(tag)
+            val nf = NfcF.get(tag)
+
+            if (id != null) {
+                val card = ICCard(id)
+                txt!!.text = "${card.balance}원"
+                txt!!.textSize = 18f
+            }
+            else if (nf != null) {
+                val card = FeliCa(nf, tag.id)
+                txt!!.text = "${card.balance}엔"
+                txt!!.textSize = 18f
+            }
+            else {
+                toast("Cannot read card")
+            }
         } catch (e: Exception) {
             toast(e.toString())
         }
