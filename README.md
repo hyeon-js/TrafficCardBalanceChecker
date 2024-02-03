@@ -6,6 +6,6 @@
  - [x] 티머니
  - [x] 캐시비
 ### 일본
- - [ ] Suica
+ - [x] Suica
  - [ ] PASMO
  - [ ] ICOCA
