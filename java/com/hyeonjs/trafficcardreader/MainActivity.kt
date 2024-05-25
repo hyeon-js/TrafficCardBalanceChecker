@@ -29,7 +29,7 @@ class MainActivity : Activity() {
         val txt = TextView(this)
         txt.text = "1. Enable NFC on your Smartphone\n" +
                 "2. Tag IC Card to Smartphone"
-        txt!!.textSize = 16f
+        txt!!.textSize = 18f
         txt.layoutParams = LinearLayout.LayoutParams(-1, -1)
         txt.gravity = Gravity.CENTER or Gravity.CENTER_VERTICAL
         layout.addView(txt)
@@ -52,12 +52,12 @@ class MainActivity : Activity() {
             if (id != null) {
                 val card = ICCard(id)
                 txt!!.text = "${card.balance}원"
-                txt!!.textSize = 18f
+                txt!!.textSize = 22f
             }
             else if (nf != null) {
                 val card = FeliCa(nf, tag.id)
                 txt!!.text = "${card.balance}엔"
-                txt!!.textSize = 18f
+                txt!!.textSize = 22f
             }
             else {
                 toast("Cannot read card")
