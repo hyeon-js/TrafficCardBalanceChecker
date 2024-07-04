@@ -7,5 +7,5 @@
  - [x] 캐시비
 ### 일본
  - [x] Suica
- - [ ] PASMO
- - [ ] ICOCA
+ - [x] PASMO
+ - [x] ICOCA
