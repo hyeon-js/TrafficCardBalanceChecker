@@ -6,6 +6,4 @@
  - [x] 티머니
  - [x] 캐시비
 ### 일본
- - [x] Suica
- - [x] PASMO
- - [x] ICOCA
+ - [x] Suica 및 상호호환카드
