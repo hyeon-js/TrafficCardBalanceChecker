@@ -29,7 +29,7 @@ class MainActivity : Activity() {
         val txt = TextView(this)
         txt.text = "1. Enable NFC on your Smartphone\n" +
                 "2. Tag IC Card to Smartphone"
-        txt!!.textSize = 18f
+        txt.textSize = 18f
         txt.layoutParams = LinearLayout.LayoutParams(-1, -1)
         txt.gravity = Gravity.CENTER or Gravity.CENTER_VERTICAL
         layout.addView(txt)
