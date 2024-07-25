@@ -8,3 +8,4 @@
 ### 일본
  - [x] Suica 및 상호호환카드
  - [x] IruCa
+ - [x] PASPY
