@@ -71,12 +71,12 @@ class MainActivity : Activity() {
 
     override fun onResume() {
         super.onResume()
-        if (adapter != null) adapter!!.enableForegroundDispatch(this, intent, null, null)
+        adapter!!.enableForegroundDispatch(this, intent, null, null)
     }
 
     override fun onPause() {
         super.onPause()
-        if (adapter != null) adapter!!.disableForegroundDispatch(this)
+        adapter!!.disableForegroundDispatch(this)
     }
 
     private fun toast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
